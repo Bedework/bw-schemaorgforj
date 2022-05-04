@@ -7,6 +7,8 @@ import org.bedework.json.JsonRegistration;
 import org.bedework.json.JsonTypeInfo;
 import org.bedework.json.JsonValueFactory;
 import org.bedework.schemaorg.impl.values.factories.SOContactPointFactory;
+import org.bedework.schemaorg.impl.values.factories.SOGeoCoordinatesFactory;
+import org.bedework.schemaorg.impl.values.factories.SOPlaceFactory;
 import org.bedework.schemaorg.impl.values.factories.SOPostalAddressFactory;
 import org.bedework.schemaorg.impl.values.factories.SOThingFactory;
 import org.bedework.schemaorg.model.SOTypes;
@@ -47,6 +49,22 @@ public class SOPropertyAttributes implements JsonRegistration {
          null, // elementType
          true, // object
          SOContactPointFactory.class); // factoryClass
+
+    type(SOTypes.typeGeoCoordinates,
+         true, // requiresType
+         false, // valueList
+         false, // propertyList
+         null, // elementType
+         true, // object
+         SOGeoCoordinatesFactory.class); // factoryClass
+
+    type(SOTypes.typePlace,
+         true, // requiresType
+         false, // valueList
+         false, // propertyList
+         null, // elementType
+         true, // object
+         SOPlaceFactory.class); // factoryClass
 
     type(SOTypes.typePostalAddress,
          true, // requiresType
