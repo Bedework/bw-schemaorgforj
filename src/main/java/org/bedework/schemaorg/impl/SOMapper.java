@@ -13,4 +13,8 @@ public class SOMapper extends JsonMapper {
     super();
     registerTypes(new SOPropertyAttributes());
   }
+
+  public String getSchema(final String typeName) {
+    return SOPropertyAttributes.getSchema(typeName);
+  }
 }

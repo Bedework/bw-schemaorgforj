@@ -33,6 +33,9 @@ public class SOPropertyAttributes implements JsonRegistration {
   private final static Map<String, JsonTypeInfo> types =
           new HashMap<>();
 
+  private final static Map<String, String> schemas =
+          new HashMap<>();
+
   private final static Map<String, List<String>> validFor =
           new HashMap<>();
 
@@ -43,6 +46,7 @@ public class SOPropertyAttributes implements JsonRegistration {
 
   static {
     type(SOTypes.typeContactPoint,
+         "https://schema.org/ContactPoint",
          true, // requiresType
          false, // valueList
          false, // propertyList
@@ -51,6 +55,7 @@ public class SOPropertyAttributes implements JsonRegistration {
          SOContactPointFactory.class); // factoryClass
 
     type(SOTypes.typeGeoCoordinates,
+         "https://schema.org/GeoCoordinates",
          true, // requiresType
          false, // valueList
          false, // propertyList
@@ -59,6 +64,7 @@ public class SOPropertyAttributes implements JsonRegistration {
          SOGeoCoordinatesFactory.class); // factoryClass
 
     type(SOTypes.typePlace,
+         "https://schema.org/Place",
          true, // requiresType
          false, // valueList
          false, // propertyList
@@ -67,6 +73,7 @@ public class SOPropertyAttributes implements JsonRegistration {
          SOPlaceFactory.class); // factoryClass
 
     type(SOTypes.typePostalAddress,
+         "https://schema.org/PostalAddress",
          true, // requiresType
          false, // valueList
          false, // propertyList
@@ -75,6 +82,7 @@ public class SOPropertyAttributes implements JsonRegistration {
          SOPostalAddressFactory.class); // factoryClass
 
     type(SOTypes.typeThing,
+         "https://schema.org/Thing",
          true, // requiresType
          false, // valueList
          false, // propertyList
@@ -84,6 +92,7 @@ public class SOPropertyAttributes implements JsonRegistration {
   }
 
   private static void type(final String typeName,
+                           final String schema,
                            final boolean requiresType,
                            final boolean valueList,
                            final boolean propertyList,
@@ -91,12 +100,21 @@ public class SOPropertyAttributes implements JsonRegistration {
                            final boolean object,
                            final Class<? extends JsonValueFactory> factoryClass) {
     types.put(typeName,
-              new JsonTypeInfo(typeName, requiresType, valueList, propertyList,
-                             elementType, object, factoryClass));
+              new JsonTypeInfo(typeName, requiresType,
+                               valueList, propertyList,
+                               elementType, object,
+                               factoryClass));
+    if (schema != null) {
+      schemas.put(typeName, schema);
+    }
   }
 
   private static String[] types(final String... types) {
     return types;
+  }
+
+  public static String getSchema(final String typeName) {
+    return schemas.get(typeName);
   }
 
   @Override
