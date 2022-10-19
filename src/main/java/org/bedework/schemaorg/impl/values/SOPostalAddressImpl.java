@@ -22,7 +22,7 @@ public class SOPostalAddressImpl extends SOContactPointImpl
 
   @Override
   public void setAddressCountry(final String val) {
-    setProperty(SOPropertyNames.addressCountry, val);
+    setOrRemoveProperty(SOPropertyNames.addressCountry, val);
   }
 
   @Override
@@ -32,8 +32,8 @@ public class SOPostalAddressImpl extends SOContactPointImpl
 
   @Override
   public void setAddressLocality(final String val) {
-    setProperty(factory.makeProperty(SOPropertyNames.addressLocality,
-                                     val));
+    setOrRemoveProperty(SOPropertyNames.addressLocality,
+                        val);
   }
 
   @Override
@@ -43,7 +43,7 @@ public class SOPostalAddressImpl extends SOContactPointImpl
 
   @Override
   public void setAddressRegion(final String val) {
-    setProperty(SOPropertyNames.addressRegion, val);
+    setOrRemoveProperty(SOPropertyNames.addressRegion, val);
   }
 
   @Override
@@ -53,7 +53,7 @@ public class SOPostalAddressImpl extends SOContactPointImpl
 
   @Override
   public void setPostOfficeBoxNumber(final String val) {
-    setProperty(SOPropertyNames.postOfficeBoxNumber, val);
+    setOrRemoveProperty(SOPropertyNames.postOfficeBoxNumber, val);
   }
 
   @Override
@@ -63,7 +63,7 @@ public class SOPostalAddressImpl extends SOContactPointImpl
 
   @Override
   public void setPostalCode(final String val) {
-    setProperty(SOPropertyNames.postalCode, val);
+    setOrRemoveProperty(SOPropertyNames.postalCode, val);
   }
 
   @Override
@@ -73,7 +73,7 @@ public class SOPostalAddressImpl extends SOContactPointImpl
 
   @Override
   public void setStreetAddress(final String val) {
-    setProperty(SOPropertyNames.streetAddress, val);
+    setOrRemoveProperty(SOPropertyNames.streetAddress, val);
   }
 
   @Override
