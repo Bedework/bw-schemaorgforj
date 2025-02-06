@@ -1,4 +1,4 @@
-# bw-schemaorgforj
+# bw-schemaorgforj [![Build Status](https://travis-ci.org/Bedework/bw-util2.svg)](https://travis-ci.org/Bedework/bw-util2)
 Create and parse schema.org objects
 
 ## Requirements
@@ -33,3 +33,6 @@ For full details, see [Sonatype's documentation for using Maven to publish relea
 * Allow for long and double types in json.
 * Use new json library property to avoid null values.
 
+### 1.0.1
+* Update library versions
+* Pre-jakarta
