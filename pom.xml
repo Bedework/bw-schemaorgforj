@@ -88,16 +88,6 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.owasp</groupId>
-        <artifactId>dependency-check-maven</artifactId>
-      </plugin>
-
-      <plugin>
-        <groupId>org.asciidoctor</groupId>
-        <artifactId>asciidoctor-maven-plugin</artifactId>
-      </plugin>
-
-      <plugin>
         <artifactId>maven-resources-plugin</artifactId>
         <groupId>org.apache.maven.plugins</groupId>
 
